@@ -60,11 +60,11 @@ function playRound(humanChoice, computerChoice) {
     else {
         if (humanChoice == 'rock') {
             console.log("You win! Rock beats Scissors");
-            humanChoice++;
+            humanScore++;
         }
         else if (humanChoice === 'paper') {
             console.log("You lose! Scissors beats Paper");
-            computerChoice++;
+            computerScore++;
         }
         else {
             console.log("It's a draw!");
@@ -72,11 +72,18 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 
-const result = playRound(humanSelection, computerSelection);
-
-console.log(result);
 
 // Create a function that plays an entire 5-round game
+function playGame() {
+    // Loop 5 times to play 5 rounds
+    for (let i = 0; i < 5; i++) {
+
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+
+        playRound(humanSelection, computerSelection);
+    }
+}
+
+playGame();
