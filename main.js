@@ -34,9 +34,9 @@ function getHumanChoice() {
 }
 
 // create a variable named humanScore and initialize with the value of 0
-let humanScore = 0;
+let humanScore = document.getElementById("humanScore");
 // create a variable named computerScore and initialize with the value of 0
-let computerScore = 0;
+let computerScore = document.getElementById("computerScore");
 
 // Create a function that plays a single round AND THEN compares both human's and computer's input.
 function playRound(event) {
@@ -52,14 +52,14 @@ function playRound(event) {
             roundResult.textContent = "You win! Paper beats Rock";
             div.appendChild(roundResult);
 
-            humanScore++;
+            humanScore.textContent++;
         }
         else if (humanChoice.id === 'scissor') {
             console.log("You lose! Rock beats Scissors");
             roundResult.textContent = "You lose! Rock beats Scissors";
             div.appendChild(roundResult);
 
-            computerScore++;
+            computerScore.textContent++;
         }
         else {
             console.log("It's a draw!")
@@ -74,14 +74,14 @@ function playRound(event) {
             roundResult.textContent = "You lose! Paper beats Rock";
             div.appendChild(roundResult);
 
-            computerScore++;
+            computerScore.textContent++;
         }
         else if (humanChoice.id === 'scissor') {
             console.log("You win! Scissors beats paper")
             roundResult.textContent = "You win! Scissors beats paper";
             div.appendChild(roundResult);
 
-            humanScore++;
+            humanScore.textContent++;
         }
         else {
             console.log("It's a draw!");
@@ -97,14 +97,14 @@ function playRound(event) {
             roundResult.textContent = "You win! Rock beats Scissors";
             div.appendChild(roundResult);
 
-            humanScore++;
+            humanScore.textContent++;
         }
         else if (humanChoice.id === 'paper') {
             console.log("You lose! Scissors beats Paper");
             roundResult.textContent = "You lose! Scissors beats Paper";
             div.appendChild(roundResult);
 
-            computerScore++;
+            computerScore.textContent++;
         }
         else {
             console.log("It's a draw!");
@@ -114,21 +114,21 @@ function playRound(event) {
     }
 
     // Announces winner first to reach 5 points
-    if (humanScore === 5) {
+    if (humanScore.textContent === '5') {
         
         gameResult.textContent = "You win this game!";
         div.appendChild(gameResult);
 
-        humanScore = 0;
-        computerScore = 0;
+        humanScore.textContent = 0;
+        computerScore.textContent = 0;
     }
-    else if (computerScore === 5) {
+    else if (computerScore.textContent === '5') {
 
         gameResult.textContent = "Oof, you lost! The computer won.";
         div.appendChild(gameResult);
 
-        humanScore = 0;
-        computerScore = 0;
+        humanScore.textContent = 0;
+        computerScore.textContent = 0;
     }
 }
 
