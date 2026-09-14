@@ -27,12 +27,6 @@ function getComputerChoice() {
     }
 }
 
-// Create a function that takes an input from the human player and return it
-function getHumanChoice() {
-    let choice = prompt("Enter 'rock', 'paper' or 'scissor'").toLowerCase();
-    return choice;
-}
-
 // create a variable named humanScore and initialize with the value of 0
 let humanScore = document.getElementById("humanScore");
 // create a variable named computerScore and initialize with the value of 0
@@ -48,21 +42,18 @@ function playRound(event) {
 
     if (computerChoice === 'rock') {
         if (humanChoice.id === 'paper') {
-            console.log("You win! Paper beats Rock");
             roundResult.textContent = "You win! Paper beats Rock";
             div.appendChild(roundResult);
 
             humanScore.textContent++;
         }
         else if (humanChoice.id === 'scissor') {
-            console.log("You lose! Rock beats Scissors");
             roundResult.textContent = "You lose! Rock beats Scissors";
             div.appendChild(roundResult);
 
             computerScore.textContent++;
         }
         else {
-            console.log("It's a draw!")
             roundResult.textContent = "It's a draw!";
             div.appendChild(roundResult);
         }
@@ -70,21 +61,18 @@ function playRound(event) {
 
     else if (computerChoice === 'paper') {
         if (humanChoice.id === 'rock') {
-            console.log("You lose! Paper beats Rock");
             roundResult.textContent = "You lose! Paper beats Rock";
             div.appendChild(roundResult);
 
             computerScore.textContent++;
         }
         else if (humanChoice.id === 'scissor') {
-            console.log("You win! Scissors beats paper")
             roundResult.textContent = "You win! Scissors beats paper";
             div.appendChild(roundResult);
 
             humanScore.textContent++;
         }
         else {
-            console.log("It's a draw!");
             roundResult.textContent = "It's a draw!";
             div.appendChild(roundResult);
 
@@ -93,21 +81,18 @@ function playRound(event) {
 
     else {
         if (humanChoice.id === 'rock') {
-            console.log("You win! Rock beats Scissors");
             roundResult.textContent = "You win! Rock beats Scissors";
             div.appendChild(roundResult);
 
             humanScore.textContent++;
         }
         else if (humanChoice.id === 'paper') {
-            console.log("You lose! Scissors beats Paper");
             roundResult.textContent = "You lose! Scissors beats Paper";
             div.appendChild(roundResult);
 
             computerScore.textContent++;
         }
         else {
-            console.log("It's a draw!");
             roundResult.textContent = "It's a draw!";
             div.appendChild(roundResult);
         }
